@@ -23,9 +23,9 @@ pub mod pallet {
     #[pallet::metadata(T::AccountId = "AccountId")]
     #[pallet::generate_deposit(pub(super) fn deposit_event)]
     pub enum Event<T: Config> {
-        /// Event emitted when a record has been stored.[who,coordinates]
+        /// Event emitted when a productid is stored for sale.
         ProductStored(T::AccountId, Vec<u8>),
-       /// Event emitted when coordinates are verified. [onwer]
+       /// Event emitted when productid is sold.
 	   ProductSold(Vec<u8>),
     }
     
@@ -67,13 +67,13 @@ pub mod pallet {
 			// https://substrate.dev/docs/en/knowledgebase/runtime/origin
 			let sender = ensure_signed(origin)?;
 		
-			// Verify that the specified coordinates doesn't exist in block.         
+			// Verify that the specified productid doesn't exist in block.         
 			ensure!(!Proofs::<T>::contains_key(&productid), Error::<T>::ProductAlreadyExists);
 
-			// Store the proof with the coordinates, (owner and sender).
+			// Store the proof with the productid.
 			Proofs::<T>::insert(&productid, (&productname,&price,&seller,&sender));
 
-			// Emit an event that the land record is stored.
+			// Emit an event that the product is stored.
 			Self::deposit_event(Event::ProductStored(sender,productid));
 
 			Ok(().into())
@@ -90,11 +90,11 @@ pub mod pallet {
 			// https://substrate.dev/docs/en/knowledgebase/runtime/origin
 			ensure_signed(origin)?;
 
-			// Verify that the land record exist in block .
+			// Verify that the product exist in block .
 			ensure!(Proofs::<T>::contains_key(&productid), Error::<T>::NoSuchProduct);
 			Proofs::<T>::remove(&productid);
 
-			// Emit an event that the land record is verified.
+			// Emit an event that the product is sold.
 			Self::deposit_event(Event::ProductSold(productid));
 
 			Ok(().into())
