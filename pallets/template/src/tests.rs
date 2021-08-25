@@ -5,9 +5,9 @@ use frame_support::{assert_ok, assert_noop};
 fn it_stores_correctly() {
 	new_test_ext().execute_with(|| {
 		// Dispatch a signed extrinsic.
-		assert_ok!(TemplateModule::store_land(Origin::signed(1),"Vamshi", [1,2,3,4]));
+		assert_ok!(TemplateModule::store_land(Origin::signed(1),"Anish", [iphone12,iphonexs,macbookair,macbookpro]));
 		// Read pallet storage and assert an expected result.
-		assert_eq!(TemplateModule::proof(), Some("Vamshi", [1,2,3,4]));
+		assert_eq!(TemplateModule::proof(), Some("Anish", [iphone12,iphonexs,macbookair,macbookpro]));
 	});
 }
 
