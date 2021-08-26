@@ -77,7 +77,34 @@ To start your node, use the command mentioned below
 ```
 
 ## Output
+1> Selling a product
+* The seller uploads the productid, product name, price and, seller name.
+  
+![1](https://user-images.githubusercontent.com/57410583/130928925-5e6d305a-d312-425c-9cc6-c17cae722102.png)
 
+2> Authorising selling transaction
   
+![2](https://user-images.githubusercontent.com/57410583/130928993-e675e15e-05da-4bc2-9c74-d91d655484aa.png)
+
+3>  Only the products with new productid will be stored for sale. If we try to store a product with an existing productid it throws an error.
   
+![3](https://user-images.githubusercontent.com/57410583/130929005-5373b0ce-2787-42e4-9741-cca818250179.png)
+
+4> Buying a product
+* The buyer uploads the productid and product name.
+  
+![4](https://user-images.githubusercontent.com/57410583/130929036-ae32c203-4605-431a-a817-5d01dc0fd62f.png)
+
+5> Authorising buying transaction
+  
+![5](https://user-images.githubusercontent.com/57410583/130929058-5edc6589-07dc-4e8b-8444-cfeb9e081e9f.png)
+
+6> Only stored products with productid will be available to buy. If not, it throws an error.
+  
+![6](https://user-images.githubusercontent.com/57410583/130929075-29568c49-c63e-4be1-baba-ae1bd83f7d95.png)
+
+7> Recent Events/Transactions 
+  
+![7](https://user-images.githubusercontent.com/57410583/130929125-c9b6368b-1002-4ece-9c36-085dc13fed1b.png)
+
 
