@@ -17,6 +17,8 @@ fn it_stores_correctly() {
 
 		assert_ok!(TemplateModule::sell_product(Origin::signed(1),AS89881xW, yonex nanoray 18i,3000,Silver Bullet));
 		assert_eq!(TemplateModule::proof(), Some(AS89881xW, yonex nanoray 18i));
+		
+	        
 	});
 }
 
