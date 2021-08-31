@@ -18,6 +18,17 @@ fn it_stores_correctly() {
 		assert_ok!(TemplateModule::sell_product(Origin::signed(1),AS89881xW, yonex nanoray 18i,3000,Silver Bullet));
 		assert_eq!(TemplateModule::proof(), Some(AS89881xW, yonex nanoray 18i));
 		
+		assert_ok!(TemplateModule::buy_product(Origin::signed(1),AS89881xW, yonex nanoray 18i));
+		assert_eq!(TemplateModule::proof(), Some(AS89881xW));
+		
+		assert_ok!(TemplateModule::buy_product(Origin::signed(1),BD5400eL,nike airmax11));
+		assert_eq!(TemplateModule::proof(), Some(BD5400eL));
+		
+		assert_ok!(TemplateModule::buy_product(Origin::signed(1),HG9666kJ,apple macbook air));
+		assert_eq!(TemplateModule::proof(), Some(HG9666kJ));
+		
+		assert_ok!(TemplateModule::buy_product(Origin::signed(1),CF4865oY,iphone12));
+		assert_eq!(TemplateModule::proof(), Some(CF4865oY));
 	        
 	});
 }
